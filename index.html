@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #b6e5b6; /* Pastel green background */
+            text-align: center;
+        }
+        #login-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #ffd1dc; /* Pink background for login container */
+        }
+        #login-box {
+            background: white; /* White background for the form inside the container */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input {
+            display: block;
+            margin: 10px 0;
+            padding: 10px;
+            width: 200px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background: grey; /* Grey color for buttons */
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #666666;
+        }
+        #strands {
+            background-color: #ffffff; /* White background */
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .strand-box, .content-box {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: left;
+            margin: 10px auto;
+        }
+        .nav-button {
+            margin: 5px;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .nav-button:hover {
+            background-color: #555;
+        }
+    </style>
+    <script>
+        function login() {
+            document.getElementById('login-container').style.display = 'none';
+            document.getElementById('main-content').style.display = 'block';
+        }
+
+        function logout() {
+            document.getElementById('login-container').style.display = 'flex';
+            document.getElementById('main-content').style.display = 'none';
+        }
+    </script>
+</head>
+<body>
+    <div id="login-container">
+        <div id="login-box">
+            <h2>Rosales National High School Login</h2>
+            <input type="text" placeholder="Username" required>
+            <input type="password" placeholder="Password" required>
+            <button onclick="login()">Log In</button>
+        </div>
+    </div>
+    
+    <div id="main-content" style="display: none;">
+        <nav>
+            <button class="nav-button" onclick="location.href='#home'">Home</button>
+            <button class="nav-button" onclick="location.href='#strands'">Strands</button>
+            <button class="nav-button" onclick="location.href='#contact'">Contact Us</button>
+            <button class="nav-button" onclick="logout()">Log Out</button>
+        </nav>
+        
+        <section id="home">
+            <div class="content-box">
+                <h1>Welcome to RNHS!</h1>
+                <p>The school is currently implementing a K to 12 basic education program offering both junior and senior high school. It is in accordance with the resolution that was ordered by the Department of Education (DepEd).</p>
+                <p>The school has HumSS strand, STEM strand, ABM strand and GAS under the Academic track as well as Technical-Vocational-Livelihood (TVL) track which equips students with technical skills for its senior high school program.</p>
+            </div>
+            <div class="content-box">
+                <h2>What programs & courses does Rosales National High School offer?</h2>
+                <p>Choosing the right program can help you set your future goals and visualize where you want to be. Whether you want to be an engineer, a teacher, an accountant, or you want to level up in your profession, making yourself informed with the right choices will surely back you up in the future.</p>
+            </div>
+        </section>
+
+        <section id="strands">
+            <h1>Strands</h1>
+            <div class="strand-box">
+                <h2>STEM</h2>
+                <p>The Science, Technology, Engineering, and Mathematics (STEM) strand is designed for students who have a strong passion for scientific discovery, technological advancements, and problem-solving.</p>
+            </div>
+            <div class="strand-box">
+                <h2>ABM</h2>
+                <p>The Accounting and Business Management (ABM) strand is perfect for students eager to explore finance, entrepreneurship, and corporate management.</p>
+            </div>
+            <div class="strand-box">
+                <h2>HUMSS</h2>
+                <p>The Humanities and Social Sciences (HUMSS) strand is designed for students with a strong passion for literature, social studies, communication, philosophy, and the arts.</p>
+            </div>
+            <div class="strand-box">
+                <h2>ICT</h2>
+                <p>The ICT strand focuses on programming, networking, and software development, preparing students for careers in the ever-expanding IT sector.</p>
+            </div>
+            <div class="strand-box">
+                <h2>HE</h2>
+                <p>The Home Economics (HE) strand covers practical skills in cooking, sewing, budgeting, home management, and caregiving, preparing students for careers in hospitality, tourism, catering, and entrepreneurship.</p>
+            </div>
+            <div class="strand-box">
+                <h2>SMAW</h2>
+                <p>The Shielded Metal Arc Welding (SMAW) strand provides hands-on training in welding techniques, metal cutting, and fabrication, equipping students with skills for careers in construction, manufacturing, and shipbuilding.</p>
+            </div>
+            <div class="strand-box">
+                <h2>GAS</h2>
+                <p>The General Academic Strand (GAS) offers a flexible curriculum for students who are still exploring their career options, integrating various disciplines for a well-rounded education.</p>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="content-box">
+                <h1>Contact Us</h1>
+                <p>If you have any questions or need more information, feel free to reach out to us.</p>
+                <p>Email: info@rnhs.edu.ph</p>
+                <p>Phone: (123) 456-7890</p>
+                <p>Address: Rosales National High School, Rosales, Pangasinan</p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
